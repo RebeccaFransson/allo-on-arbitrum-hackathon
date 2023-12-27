@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css?family=Sarala:700|Exo+2:300");
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  outline: 1px solid transparent;
+}
+
+.wrapper {
+  width: 280px;
+  height: 480px;
+  perspective: 800px;
+  position: relative;
+}
+
+.card {
+  width: 320px;
+  height: 450px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-140px);
+  transition: transform 350ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  cursor: pointer;
+}
+
+.card > div {
+  position: absolute;
+  width: 320px;
+  height: 450px;
+  padding: 34px 21px;
+  transition: all 350ms cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.front {
+  background-color: black;
+  color: white;
+  transform: rotateY(0deg) translateZ(160px);
+  border-radius: 34px 3px 0 0;
+}
+
+.right {
+  background-color: grey;
+  opacity: 0.08;
+  transform: rotateY(90deg) translateZ(160px);
+  border-radius: 0 0 3px 34px;
+}
+
+.card:hover {
+  transform: translateZ(-160px) rotateY(-90deg);
+}
+
+.card:hover .front {
+  opacity: 0;
+}
+
+.card:hover .right {
+  opacity: 1;
+}
+
+h1,
+h2 {
+  margin: 0;
+  font-size: 38px;
+  letter-spacing: -0.25px;
+  font-family: "Sarala";
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 21px;
+  transform: translateX(-34px);
+}
+
+p {
+  margin: 0;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+span {
+  margin-left: 13px;
+  opacity: 0.55;
+}
+
+@keyframes float {
+  0% {
+    transform: translateZ(20px);
+  }
+
+  100% {
+    transform: translateY(-21px) translateX(-13px) translateZ(30px);
+  }
+}
+
+ul {
+  margin-left: 21px;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 300;
+  list-style: none;
+}
+
+li {
+  padding-bottom: 8px;
+  position: relative;
+}
+
+li:before {
+  content: "x";
+  position: absolute;
+  left: -21px;
+  opacity: 0.55;
+}
+
+.card:hover button {
+  transform: scale(1) skewY(0);
+}
+
+.card:not(:hover) button {
+  opacity: 0;
+}
+
+.price {
+  position: absolute;
+  bottom: 34px;
+  left: 21px;
+  font-size: 34px;
+  opacity: 0.34;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    transform: scale(0.67);
+  }
+}

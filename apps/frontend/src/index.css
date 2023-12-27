@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.text-shadow-neon {
+  text-shadow: 1px 1px 5px rgb(244 114 182);
+}
