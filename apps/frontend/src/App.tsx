@@ -18,8 +18,16 @@ export const App = () => {
 
   return (
     <div className="App font-mono	">
-      <header className="App-header flex justify-center flex-col py-10">
-        <h1 className=""> COMING SOON </h1>
+      <header className=" bg-black text-6xl text-pink-400 text-shadow-neon flex justify-evenly py-10 items-center">
+        <h1 className="w-2/5 text-center">COMING SOON</h1>
+        <div className=" w-2/5 relative after:shadow-neon">
+          <img
+            className="relative"
+            src="dark-planet.jpg"
+            height="500"
+            width="500"
+          />
+        </div>
       </header>
       <div className="flex w-full">
         <div
